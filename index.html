@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#07090d">
 <meta name="description" content="Unified group portfolio of five BSIT students from TUP Manila: Kirby Ramilo, Mel Fredrick Sablan, Justine Carl Fabian, Althea Marie Laurente and Krizten Antoinette Lapuz.">
 <title>node/05 · Group Portfolio</title>
+<script>try{var t=localStorage.getItem('n05-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
@@ -26,7 +27,22 @@
   <div class="wrap">
     <a class="brand" href="#home" aria-label="node/05 home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><b class="brand-txt">node<span>/</span>05</b></a>
     <nav class="nav-people" id="navPeople" aria-label="Members"></nav>
-    <button class="term-btn" id="termJump" type="button" aria-label="Open terminal">&gt;_</button>
+    <div class="tools">
+      <button class="term-btn icon-btn" id="palBtn" type="button" aria-label="Choose accent color" aria-expanded="false" aria-controls="pal" title="Accent color"><span class="sw-dot" aria-hidden="true"></span></button>
+      <button class="term-btn icon-btn" id="themeBtn" type="button" aria-label="Switch to light mode" title="Dark / light">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button class="term-btn" id="termJump" type="button" aria-label="Open terminal">&gt;_</button>
+      <div class="pal" id="pal" role="dialog" aria-label="Accent color" hidden>
+        <div class="pal-head"><span>accent color</span><button type="button" class="pal-reset" id="palReset">reset</button></div>
+        <div class="pal-grad" id="palGrad"><canvas id="palCv" width="288" height="132"></canvas><i id="palDot"></i></div>
+        <div class="pal-prev" id="palPrev" aria-hidden="true"></div>
+        <div class="pal-sw" id="palSw"></div>
+        <label class="pal-hex">hex <input id="palHex" type="text" maxlength="7" spellcheck="false" autocomplete="off" placeholder="#3cf2a6" aria-label="Hex color"></label>
+        <p class="pal-hint">drag the gradient or pick a swatch</p>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -93,6 +109,7 @@
 </footer>
 
 <div class="toast" id="toast" role="status"></div>
+<canvas id="wave" aria-hidden="true"></canvas>
 
 <script src="js/data.js"></script>
 <script src="js/app.js"></script>

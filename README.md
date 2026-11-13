@@ -21,6 +21,15 @@ introduction (`roles`, `intro`, `signature`, `card`, `highlights`), `stack`, `fo
 - Photo: set `photo: "images/kirby.jpg"`. Empty shows initials.
 - Accent color per member: `color`.
 
+## Theme controls
+
+Two buttons sit in the nav, left of `>_`:
+
+- **Accent palette** (rainbow dot): drag the color gradient, pick a swatch or type a hex. It recolors the whole site, including member pages. `reset` restores each member's own color. Saved in `localStorage` (`n05-accent`).
+- **Dark / light toggle** (moon/sun): a code-rain wave (digits, letters, symbols) expands from the button while the page switches theme. Saved in `localStorage` (`n05-theme`). Honors `prefers-reduced-motion` (instant switch).
+
+Light theme tokens live in `:root[data-theme="light"]` in `css/style.css`. Wave and palette logic is in `js/app.js`.
+
 ## Run locally
 
 Open `index.html` in a browser, or serve the folder:
