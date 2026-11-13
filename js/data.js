@@ -77,7 +77,7 @@ var TEAM = [
     ]
   },
   {
-    id:"carl", nick:"Carl", first:"Justine Carl", last:"Fabian", initials:"JC", color:"#5ab8ff", photo:"",
+    id:"carl", nick:"Carl", first:"Justine Carl", last:"Fabian", initials:"JC", color:"#5ab8ff", photo:"images/carl.png",
     roles:[
       "BSIT Student · TUP Manila",
       "Software Engineer · systems, automation & networks"
