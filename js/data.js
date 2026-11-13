@@ -153,7 +153,7 @@ var TEAM = [
     ]
   },
   {
-    id:"kwiz", nick:"Kwiz", first:"Krizten Antoinette", last:"Lapuz", initials:"KL", color:"#c792ff", photo:"",
+    id:"kwiz", nick:"Kwiz", first:"Krizten Antoinette", last:"Lapuz", initials:"KL", color:"#c792ff", photo:"images/kwiz.png",
     roles:[
       "4th-year BSIT · TUP Manila · Dean's Lister",
       "UI/UX Designer & Web/Mobile Developer",
