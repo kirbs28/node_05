@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07090d">
+<meta name="description" content="Unified group portfolio of five BSIT students from TUP Manila: Kirby Ramilo, Mel Fredrick Sablan, Justine Carl Fabian, Althea Marie Laurente and Krizten Antoinette Lapuz.">
+<title>node/05 · Group Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div id="boot" aria-hidden="true">
+  <div class="boot-box">
+    <div class="t">NODE<span>/</span>05 // SECURE SESSION</div>
+    <div id="bootLines"></div>
+    <div class="boot-bar"><i id="bootBar"></i></div>
+    <div class="boot-skip">click or press any key to skip</div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="node/05 home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><b class="brand-txt">node<span>/</span>05</b></a>
+    <nav class="nav-people" id="navPeople" aria-label="Members"></nav>
+    <button class="term-btn" id="termJump" type="button" aria-label="Open terminal">&gt;_</button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ================= HOME ================= -->
+  <section class="view" id="view-home" aria-label="Team home">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span>BSIT · TUP Manila · group portfolio</span>
+          <h1>Five builders.<br><span class="g" id="heroWord">One stack.</span><span class="cur" aria-hidden="true"></span></h1>
+          <p class="lead">One shared space for five IT students. We work across AI, cloud, cybersecurity, systems and design. Pick a member to open their portfolio.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#roster" data-scroll="roster">Select a member ↓</a>
+            <button class="btn" type="button" id="heroTerm">&gt;_ open terminal</button>
+          </div>
+          <div class="stats" id="stats"></div>
+        </div>
+        <div class="term" id="term">
+          <div class="term-bar"><i></i><i></i><i></i><span>guest@node05:~</span></div>
+          <div class="term-body" id="termBody" aria-live="polite"></div>
+          <form class="term-form" id="termForm" autocomplete="off">
+            <label for="termInput">guest@node05:~$</label>
+            <input id="termInput" type="text" spellcheck="false" autocapitalize="off" aria-label="Type a command">
+          </form>
+          <div class="chips" id="termChips"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band" aria-hidden="true"><div class="track" id="band"></div></div>
+
+    <section class="sec" id="roster">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div><span class="label"><b>01</b> · select_member</span><h2>The team</h2></div>
+          <p>Every portfolio uses the same layout: introduction, tech stack, field of focus, projects and contact.</p>
+        </div>
+        <div class="roster" id="rosterGrid"></div>
+      </div>
+    </section>
+
+    <section class="sec" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div><span class="label"><b>02</b> · structure</span><h2>One layout, five people</h2></div>
+        </div>
+        <div class="flow rv">
+          <div><b>[01] INTRO</b><h4>Who they are</h4><p>Name, roles and a short introduction.</p></div>
+          <div><b>[02] STACK</b><h4>What they use</h4><p>Languages, frameworks, platforms and tools.</p></div>
+          <div><b>[03] FOCUS</b><h4>Where they go deep</h4><p>The fields each member specializes in.</p></div>
+          <div><b>[04] SHIP</b><h4>What they built</h4><p>Projects, then contact details.</p></div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= MEMBER ================= -->
+  <section class="view" id="view-member" aria-live="polite"></section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© <span id="yr"></span> node/05 · BSIT · TUP Manila</span><span id="footHint">press 1–5 to jump to a member · / for terminal</span></div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
