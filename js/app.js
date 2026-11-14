@@ -71,6 +71,10 @@
   /* ---------- project illustrations (themed SVG, or p.img for a real screenshot) ---------- */
   var DROP='M0 -11C6 -3 9 2 9 6A9 9 0 0 1 -9 6C-9 2 -6 -3 0 -11Z';
   var ART={
+    asl:'<rect class="a-s" x="20" y="10" width="280" height="130" rx="10"/><circle class="bad" cx="38" cy="26" r="4"/><text class="a-t" x="48" y="29">LIVE</text>'+
+      '<g class="a-f"><rect class="o" x="141" y="62" width="40" height="38" rx="14"/>'+[0,1,2,3].map(function(i){var h=[26,34,36,28][i];return '<rect x="'+(142+i*10)+'" y="'+(66-h)+'" width="8" height="'+(h+8)+'" rx="4"/>'}).join('')+'<rect transform="rotate(-38 143 88)" x="128" y="78" width="9" height="26" rx="4.5"/></g>'+
+      '<path class="a-s dash" d="M108 38V22h16M212 38V22h-16M108 84v16h16M212 84v16h-16"/>'+
+      '<rect x="64" y="108" width="192" height="24" rx="6" style="fill:var(--bg);opacity:.85"/><rect class="a-s" x="64" y="108" width="192" height="24" rx="6" style="stroke-width:1.2"/><text class="a-t" x="160" y="124" text-anchor="middle" style="fill:var(--ink);font-size:12px">“Hello, goodbye”</text>',
     water:'<path class="a-f o" d="M0 128c30-10 50 10 80 0s50-10 80 0 50 10 80 0 50-10 80 0v22H0z"/>'+
       '<path class="a-s" d="M12 98C40 78 52 108 82 84S128 62 160 74"/><path class="a-s dash" d="M160 74C190 52 200 82 230 60S282 46 308 54"/>'+
       '<path class="a-f o" d="M160 74C190 46 200 76 230 50S282 36 308 40V70C282 66 262 86 230 80C200 100 190 98 160 74Z"/>'+
@@ -104,7 +108,7 @@
   function artKey(p){
     if(p.art)return p.art;
     var s=(p.name+' '+(p.meta||'')+' '+(p.tags||[]).join(' ')+' '+(p.desc||'')+' '+(p.file||'')).toLowerCase();
-    var R=[['water',/water|demand/],['pos',/\bpos\b|point-of-sale|stock/],['health',/opioid|sedative|dispens/],['bg',/background remov|clear\.img/],['nodes',/group portfolio|node\/05|network|infra/],['design',/figma|ui design|brand|kriznbows|kita-kita/],['phone',/android|mobile|\bapp\b|apps\b|application|salapi/],['web',/website|\bweb\b|portfolio|portal|donat|capstone|sacradigit|html/],['chat',/chat|\bai\b|automation/]];
+    var R=[['asl',/\basl\b|sign language/],['water',/water|demand/],['pos',/\bpos\b|point-of-sale|stock/],['health',/opioid|sedative|dispens/],['bg',/background remov|clear\.img/],['nodes',/group portfolio|node\/05|network|infra/],['design',/figma|ui design|brand|kriznbows|kita-kita/],['phone',/android|mobile|\bapp\b|apps\b|application|salapi/],['web',/website|\bweb\b|portfolio|portal|donat|capstone|sacradigit|html/],['chat',/chat|\bai\b|automation/]];
     for(var i=0;i<R.length;i++)if(R[i][1].test(s))return R[i][0];
     return null;
   }
