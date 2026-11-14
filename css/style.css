@@ -37,9 +37,22 @@ button{font:inherit;color:inherit}
 .skip:focus{left:12px}
 
 /* ---------- boot ---------- */
-#boot{position:fixed;inset:0;z-index:90;background:var(--bg);display:grid;place-items:center;padding:24px;transition:opacity .45s,visibility .45s}
+#boot{position:fixed;inset:0;z-index:90;background:var(--bg);display:grid;place-items:center;padding:24px;overflow:hidden;transition:opacity .6s,visibility .6s,transform .6s,filter .6s}
 #boot.done{opacity:0;visibility:hidden}
-.boot-box{width:min(560px,100%);font-family:var(--mono);font-size:13px;color:var(--muted)}
+#boot.closing{transform:scale(1.06);filter:brightness(1.6) blur(2px)}
+body.booting{overflow:hidden}
+#bootRain{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.boot-scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.18) 2px 3px);mix-blend-mode:multiply}
+.boot-scan::after{content:"";position:absolute;left:0;right:0;height:140px;top:-140px;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--acc) 14%,transparent),transparent);animation:bootsweep 2.6s linear infinite}
+@keyframes bootsweep{to{transform:translateY(calc(100vh + 140px))}}
+.boot-box{position:relative;width:min(580px,100%);font-family:var(--mono);font-size:13px;color:var(--muted);padding:22px 24px;border:1px solid color-mix(in srgb,var(--acc) 35%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(6px);box-shadow:0 0 0 1px color-mix(in srgb,var(--acc) 10%,transparent),0 0 60px -12px color-mix(in srgb,var(--acc) 45%,transparent)}
+.boot-hex{margin-top:12px;font-size:10.5px;letter-spacing:.06em;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:clip;height:1.3em}
+.boot-meta{display:flex;justify-content:space-between;margin-top:8px;font-size:11px;letter-spacing:.14em;color:var(--dim)}
+.boot-meta b{color:var(--acc);font-weight:700}
+.boot-box.ok-all{animation:bootok .9s ease-out}
+@keyframes bootok{0%{box-shadow:0 0 0 1px var(--acc),0 0 0 0 var(--acc)}60%{box-shadow:0 0 0 1px var(--acc),0 0 90px 10px color-mix(in srgb,var(--acc) 55%,transparent)}100%{box-shadow:0 0 0 1px color-mix(in srgb,var(--acc) 10%,transparent),0 0 60px -12px color-mix(in srgb,var(--acc) 45%,transparent)}}
+.boot-line.final{text-shadow:0 0 14px var(--acc)}
+.boot-line .pend{color:var(--acc);opacity:.75}
 .boot-box .t{color:var(--ink);font-weight:700;letter-spacing:.12em;margin-bottom:14px}
 .boot-box .t span{color:var(--acc)}
 .boot-line{white-space:pre-wrap;word-break:break-word;opacity:0;transform:translateY(4px);transition:.2s}
@@ -344,8 +357,22 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
 ::view-transition-new(root){z-index:2}
 ::view-transition-group(wave),::view-transition-old(wave),::view-transition-new(wave){animation:none;mix-blend-mode:normal}
 
+/* cursor glow: ambient light + edge glow on whatever is under the pointer */
+#cursorGlow{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;z-index:60;pointer-events:none;opacity:0;transition:opacity .3s;will-change:transform;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--acc) 16%,transparent),color-mix(in srgb,var(--acc) 5%,transparent) 55%,transparent);mix-blend-mode:screen}
+#cursorGlow.on{opacity:1}
+:root[data-theme="light"] #cursorGlow{mix-blend-mode:multiply;background:radial-gradient(closest-side,color-mix(in srgb,var(--acc) 14%,transparent),transparent)}
+.gl-fx{position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .25s;z-index:2}
+.gl-fx::before,.gl-fx::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.gl-fx::before{background:radial-gradient(240px circle at var(--gx,50%) var(--gy,50%),color-mix(in srgb,var(--glc,var(--acc)) 20%,transparent),transparent 70%)}
+.gl-fx::after{border:1px solid var(--glc,var(--acc));-webkit-mask:radial-gradient(180px circle at var(--gx,50%) var(--gy,50%),#000,transparent 75%);mask:radial-gradient(180px circle at var(--gx,50%) var(--gy,50%),#000,transparent 75%);filter:drop-shadow(0 0 6px var(--glc,var(--acc)))}
+.glw:hover>.gl-fx{opacity:1}
+.glw:hover{box-shadow:0 0 26px -10px var(--glc,var(--acc))}
+@media (hover:none){#cursorGlow{display:none}}
+
 @media (max-width:420px){.tools{gap:6px}.icon-btn{width:32px}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rv{opacity:1;transform:none}
+  #cursorGlow{display:none}
 }

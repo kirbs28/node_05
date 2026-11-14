@@ -15,13 +15,18 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <div id="boot" aria-hidden="true">
+  <canvas id="bootRain"></canvas>
+  <div class="boot-scan"></div>
   <div class="boot-box">
     <div class="t">NODE<span>/</span>05 // SECURE SESSION</div>
     <div id="bootLines"></div>
+    <div class="boot-hex" id="bootHex"></div>
     <div class="boot-bar"><i id="bootBar"></i></div>
+    <div class="boot-meta"><span id="bootStatus">INITIALIZING</span><b id="bootPct">0%</b></div>
     <div class="boot-skip">click or press any key to skip</div>
   </div>
 </div>
+<div id="cursorGlow" aria-hidden="true"></div>
 
 <header class="nav">
   <div class="wrap">
