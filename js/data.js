@@ -5,7 +5,7 @@
    ========================================================= */
 var TEAM = [
   {
-    id:"kirby", nick:"Kirby", first:"Kirby", last:"Ramilo", initials:"KR", color:"#3cf2a6", photo:"",
+    id:"kirby", nick:"Kirby", first:"Kirby", last:"Ramilo", initials:"KR", color:"#3cf2a6", photo:"images/kirby.png",
     roles:[
       "BSIT Student · TUP Manila",
       "President, University Student Government",
@@ -23,13 +23,20 @@ var TEAM = [
     ],
     focus:[{t:"Cybersecurity"},{t:"Machine Learning"},{t:"Artificial Intelligence"},{t:"Networking"}],
     projects:[
-      {name:"clear.Img", file:"clear-img", meta:"Project", status:"", desc:"Project description to be added.", tags:[], todo:true},
-      {name:"Water Demand Forecast", file:"water-forecast", meta:"Machine learning", status:"", desc:"Project description to be added.", tags:["Forecasting"], todo:true},
-      {name:"Multi-modal AI Platform", file:"multimodal-ai", meta:"AI", status:"", desc:"Project description to be added.", tags:["AI"], todo:true}
+      {name:"clear.Img", file:"clear.img", meta:"Web app · TypeScript", status:"", desc:"A background remover that runs entirely on your own device using WebGPU. Nothing is uploaded or stored online: images stay local to your browser.", tags:["TypeScript","WebGPU","Privacy-first"],
+        built:["Background removal powered by the user's GPU through WebGPU","No server upload: images are processed and kept locally","No files saved online"]},
+      {name:"Multi-modal AI Chatbox", file:"Multi-modal-AI-Chatbox", meta:"AI · JavaScript", status:"", desc:"A ChatGPT-style chatbox that combines several open-source AI models with free usage, so there are no paid token limits.", tags:["AI","Open-source models","JavaScript"],
+        built:["Chat interface similar to ChatGPT","Connects multiple open-source AI models in one chatbox","Uses models with free tokens"]},
+      {name:"Restaurant POS with Stock Forecasting", file:"POS-System-with-Linear-Regression-Forecasting-of-stocks", meta:"Machine learning · JavaScript", status:"", desc:"A point-of-sale system for restaurants that records items sold and uses linear regression to forecast stock needs three months ahead, so ingredients and materials match the demand for each menu item.", tags:["POS","Linear regression","Forecasting","JavaScript"],
+        built:["Point-of-sale for menu items sold","Linear regression forecast of stock, 3 months ahead","Projects the ingredients and materials needed to meet demand per product or menu item"]},
+      {name:"Opioid & Sedative Dispensing Tracker", file:"Opioid-Sedative-Dispensing-Tracker", meta:"Data analysis · Python", status:"", desc:"A tracker for the dispensing of opioids and sedatives that flags outliers in prescriptions of controlled substances and shows which specific drugs account for the highest percentages.", tags:["Python","Outlier detection","Healthcare data"],
+        built:["Tracks opioid and sedative usage","Highlights outliers in prescribing","Shows the highest-percentage drugs"]},
+      {name:"node/05 Group Portfolio", file:"node_05", meta:"Web · JavaScript", status:"", desc:"A group portfolio that brings together the individual portfolios of five BSIT students from TUP Manila.", tags:["JavaScript","HTML","CSS"]},
+      {name:"Water Demand Forecast", file:"water-forecast", meta:"Machine learning", status:"", desc:"Project description to be added.", tags:["Forecasting"], todo:true}
     ],
     contact:[
-      {type:"github", label:"GitHub", value:"github.com/your-username", href:"", todo:true},
-      {type:"linkedin", label:"LinkedIn", value:"linkedin.com/in/your-profile", href:"", todo:true}
+      {type:"github", label:"GitHub", value:"github.com/kirbs28", href:"https://github.com/kirbs28"},
+      {type:"linkedin", label:"LinkedIn", value:"linkedin.com/in/kirbyramilo", href:"https://www.linkedin.com/in/kirbyramilo/"}
     ]
   },
   {
