@@ -32,7 +32,8 @@ var TEAM = [
       {name:"Opioid & Sedative Dispensing Tracker", file:"Opioid-Sedative-Dispensing-Tracker", meta:"Data analysis · Python", status:"", desc:"A tracker for the dispensing of opioids and sedatives that flags outliers in prescriptions of controlled substances and shows which specific drugs account for the highest percentages.", tags:["Python","Outlier detection","Healthcare data"],
         built:["Tracks opioid and sedative usage","Highlights outliers in prescribing","Shows the highest-percentage drugs"]},
       {name:"node/05 Group Portfolio", file:"node_05", meta:"Web · JavaScript", status:"", desc:"A group portfolio that brings together the individual portfolios of five BSIT students from TUP Manila.", tags:["JavaScript","HTML","CSS"]},
-      {name:"Water Demand Forecast", file:"water-forecast", meta:"Machine learning", status:"", desc:"Project description to be added.", tags:["Forecasting"], todo:true}
+      {name:"Water Demand Forecast", file:"water-forecast", meta:"Machine learning · Python", status:"", desc:"A trio-model forecasting project that compares SARIMA, Random Forest and XGBoost to find the best model for forecasting water demand in specific areas.", tags:["SARIMA","Random Forest","XGBoost","Forecasting"],
+        built:["Compares three models: SARIMA, Random Forest and XGBoost","Finds which model forecasts water demand best","Forecasts demand for specific areas"]}
     ],
     contact:[
       {type:"github", label:"GitHub", value:"github.com/kirbs28", href:"https://github.com/kirbs28"},

@@ -247,6 +247,20 @@ body.booting{overflow:hidden}
 .pc-bar span{margin-left:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .pc-art{height:120px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:var(--bg)}
 .pc-art canvas{width:100%;height:100%;display:block}
+.pc-art.tall{height:170px;background:radial-gradient(120% 120% at 80% 0%,color-mix(in srgb,var(--m) 14%,var(--bg)),var(--bg))}
+.pc-svg,.pc-img{width:100%;height:100%;display:block;transition:transform .5s}
+.pc-img{object-fit:cover;object-position:top}
+.pc:hover .pc-svg,.pc:hover .pc-img{transform:scale(1.05)}
+.pc-svg .a-s{fill:none;stroke:var(--m);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pc-svg .a-f{fill:var(--m)}
+.pc-svg .a-d{fill:none;stroke:var(--line2);stroke-width:1.5;stroke-linecap:round}
+.pc-svg .dash{stroke-dasharray:5 5}
+.pc-svg .o{opacity:.45}.pc-svg .o2{opacity:.25}.pc-svg .o3{opacity:.7}
+.pc-svg .a-t{fill:var(--muted);font:700 9px var(--mono);letter-spacing:.08em}
+.pc-svg .a-t.bt{fill:var(--bad)}
+.pc-svg .bad{fill:var(--bad)}.pc-svg .bad-r{fill:none;stroke:var(--bad);stroke-width:1.5;opacity:.6}
+.pc-svg .a-s.dash{animation:artdash 1.4s linear infinite}
+@keyframes artdash{to{stroke-dashoffset:-20}}
 .pc-art .big{position:absolute;left:18px;bottom:12px;font-family:var(--mono);font-weight:700;font-size:13px;color:var(--ink);background:color-mix(in srgb,var(--bg) 70%,transparent);padding:4px 8px;border-radius:6px;border:1px solid var(--line2)}
 .pc-body{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1}
 .pc-meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}

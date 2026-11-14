@@ -68,6 +68,54 @@
     x.globalAlpha=1;
   }
 
+  /* ---------- project illustrations (themed SVG, or p.img for a real screenshot) ---------- */
+  var DROP='M0 -11C6 -3 9 2 9 6A9 9 0 0 1 -9 6C-9 2 -6 -3 0 -11Z';
+  var ART={
+    water:'<path class="a-f o" d="M0 128c30-10 50 10 80 0s50-10 80 0 50 10 80 0 50-10 80 0v22H0z"/>'+
+      '<path class="a-s" d="M12 98C40 78 52 108 82 84S128 62 160 74"/><path class="a-s dash" d="M160 74C190 52 200 82 230 60S282 46 308 54"/>'+
+      '<path class="a-f o" d="M160 74C190 46 200 76 230 50S282 36 308 40V70C282 66 262 86 230 80C200 100 190 98 160 74Z"/>'+
+      '<path class="a-d" d="M160 20v100"/><text class="a-t" x="164" y="30">FORECAST</text>'+
+      '<g class="a-f"><path transform="translate(40 36)" d="'+DROP+'"/><path class="o" transform="translate(66 28) scale(.7)" d="'+DROP+'"/><path class="o" transform="translate(22 56) scale(.6)" d="'+DROP+'"/></g>'+
+      '<text class="a-t" x="12" y="144">SARIMA</text><text class="a-t" x="62" y="144">RF</text><text class="a-t" x="92" y="144">XGB</text>',
+    pos:'<g class="a-f">'+[0,1,2,3,4,5].map(function(i){var h=[30,42,38,56,50,66][i];return '<rect class="o2" x="'+(20+i*28)+'" y="'+(124-h)+'" width="18" height="'+h+'" rx="3"/>'}).join('')+'</g>'+
+      [6,7,8].map(function(i){var h=[72,80,92][i-6];return '<rect class="a-s dash" x="'+(20+i*28)+'" y="'+(124-h)+'" width="18" height="'+h+'" rx="3"/>'}).join('')+
+      '<path class="a-s" d="M29 90L57 78 85 84 113 66 141 72 169 54 197 46 225 40 253 28"/><path class="a-d" d="M10 126h300"/>'+
+      '<rect class="a-d" x="262" y="14" width="46" height="60" rx="4"/><path class="a-d" d="M270 26h30M270 36h30M270 46h20"/><text class="a-t" x="264" y="86">+3 MO</text>',
+    health:'<g class="a-d">'+[0,1,2,3].map(function(i){return '<circle cx="'+(30+i*70)+'" cy="118" r="0"/>'}).join('')+'</g>'+
+      '<g transform="translate(40 40) rotate(-35)"><rect class="a-s" x="-26" y="-9" width="52" height="18" rx="9"/><path class="a-s" d="M0 -9v18"/><path class="a-f o2" d="M0 -9h17a9 9 0 0 1 0 18H0z"/></g>'+
+      '<g transform="translate(92 96) rotate(30)"><rect class="a-s" x="-22" y="-8" width="44" height="16" rx="8"/><path class="a-s" d="M0 -8v16"/></g>'+
+      '<path class="a-d" d="M150 128h160M150 128V20"/><g class="a-f">'+[[166,100],[180,92],[194,98],[208,88],[222,94],[236,86],[250,92],[264,84],[200,104],[230,100]].map(function(p){return '<circle class="o3" cx="'+p[0]+'" cy="'+p[1]+'" r="3.5"/>'}).join('')+'</g>'+
+      '<circle class="bad" cx="288" cy="38" r="5"/><circle class="bad-r" cx="288" cy="38" r="12"/><text class="a-t bt" x="214" y="34">OUTLIER</text><path class="a-d dash" d="M150 70h160"/>',
+    bg:'<defs><pattern id="ck" width="20" height="20" patternUnits="userSpaceOnUse"><rect class="a-f o3" width="10" height="10"/><rect class="a-f o3" x="10" y="10" width="10" height="10"/></pattern></defs>'+
+      '<rect width="320" height="150" fill="url(#ck)"/><g class="a-f"><circle cx="160" cy="58" r="26"/><path d="M104 150c0-34 24-52 56-52s56 18 56 52z"/></g>'+
+      '<circle class="a-s dash" cx="160" cy="58" r="31"/><path class="a-s dash" d="M98 150c0-38 26-58 62-58s62 20 62 58"/><text class="a-t" x="12" y="20">WEBGPU · LOCAL ONLY</text>',
+    chat:'<rect class="a-f o" x="16" y="14" width="150" height="34" rx="12"/><circle class="a-f" cx="34" cy="31" r="3"/><circle class="a-f" cx="46" cy="31" r="3"/><circle class="a-f" cx="58" cy="31" r="3"/>'+
+      '<rect class="a-s" x="120" y="58" width="184" height="40" rx="12"/><path class="a-d" d="M136 72h120M136 84h80"/>'+
+      '<rect class="a-f o" x="16" y="108" width="120" height="30" rx="12"/><g class="a-f"><circle cx="200" cy="124" r="9"/><circle class="o" cx="228" cy="124" r="9"/><circle class="o2" cx="256" cy="124" r="9"/></g><text class="a-t" x="276" y="127">+N</text>',
+    web:'<rect class="a-s" x="20" y="14" width="280" height="122" rx="8"/><path class="a-d" d="M20 36h280"/><g class="a-f"><circle cx="34" cy="25" r="3"/><circle class="o" cx="46" cy="25" r="3"/><circle class="o2" cx="58" cy="25" r="3"/></g>'+
+      '<rect class="a-f o" x="34" y="48" width="130" height="14" rx="3"/><path class="a-d" d="M34 74h130M34 84h104M34 94h118"/><rect class="a-s" x="34" y="106" width="52" height="18" rx="9"/><rect class="a-f o" x="190" y="48" width="96" height="76" rx="6"/>',
+    nodes:'<g class="a-s">'+[[160,20],[250,56],[216,118],[104,118],[70,56]].map(function(p){return '<path d="M160 72L'+p[0]+' '+p[1]+'"/>'}).join('')+'<path class="a-d" d="M160 20L250 56L216 118L104 118L70 56Z"/></g>'+
+      '<g class="a-f">'+[[160,20],[250,56],[216,118],[104,118],[70,56]].map(function(p,i){return '<circle class="'+(i%2?'o':'')+'" cx="'+p[0]+'" cy="'+p[1]+'" r="11"/>'}).join('')+'<circle cx="160" cy="72" r="16"/></g><text class="a-t" x="148" y="76" style="fill:var(--on)">05</text>',
+    phone:'<rect class="a-s" x="116" y="8" width="88" height="136" rx="14"/><path class="a-d" d="M148 16h24"/><rect class="a-f o" x="126" y="30" width="68" height="34" rx="6"/><path class="a-d" d="M126 76h68M126 88h48"/>'+
+      '<g class="a-f"><circle cx="138" cy="116" r="7"/><circle class="o" cx="160" cy="116" r="7"/><circle class="o2" cx="182" cy="116" r="7"/></g><path class="a-s dash" d="M40 110c20-40 40-50 70-50M280 40c-20 30-40 40-76 40"/>',
+    design:'<rect class="a-s" x="30" y="22" width="90" height="106" rx="8"/><rect class="a-f o" x="100" y="38" width="90" height="106" rx="8" style="transform:translate(40px,-12px)"/><rect class="a-s dash" x="170" y="28" width="90" height="106" rx="8" style="transform:translate(40px,0)"/>'+
+      '<g class="a-f"><circle cx="75" cy="60" r="12"/><rect class="o" x="48" y="84" width="54" height="8" rx="4"/><rect class="o2" x="48" y="100" width="36" height="8" rx="4"/></g><path class="a-s" d="M214 110C228 70 250 70 262 40"/><circle class="a-f" cx="262" cy="40" r="4"/>'
+  };
+  function artKey(p){
+    if(p.art)return p.art;
+    var s=(p.name+' '+(p.meta||'')+' '+(p.tags||[]).join(' ')+' '+(p.desc||'')+' '+(p.file||'')).toLowerCase();
+    var R=[['water',/water|demand/],['pos',/\bpos\b|point-of-sale|stock/],['health',/opioid|sedative|dispens/],['bg',/background remov|clear\.img/],['nodes',/group portfolio|node\/05|network|infra/],['design',/figma|ui design|brand|kriznbows|kita-kita/],['phone',/android|mobile|\bapp\b|apps\b|application|salapi/],['web',/website|\bweb\b|portfolio|portal|donat|capstone|sacradigit|html/],['chat',/chat|\bai\b|automation/]];
+    for(var i=0;i<R.length;i++)if(R[i][1].test(s))return R[i][0];
+    return null;
+  }
+  function projArt(p,m,k){
+    var key=artKey(p),inner;
+    if(p.img)inner='<img class="pc-img" src="'+esc(p.img)+'" alt="'+esc(p.name)+' preview" loading="lazy">';
+    else if(key)inner='<svg class="pc-svg" viewBox="0 0 320 150" preserveAspectRatio="xMidYMid slice" role="img" aria-label="'+esc(p.name)+' illustration">'+ART[key]+'</svg>';
+    else inner='<canvas data-seed="'+esc(m.id+p.name)+'"></canvas>';
+    return '<div class="pc-art'+(key||p.img?' tall':'')+'">'+inner+'<span class="big">P-0'+(k+1)+'</span></div>';
+  }
+
   /* ---------- member view ---------- */
   var SECS=[['s-intro','01 intro'],['s-stack','02 stack'],['s-focus','03 focus'],['s-projects','04 projects'],['s-contact','05 contact']];
   function renderMember(m){
@@ -103,7 +151,7 @@
     h+='<section class="msec" id="s-projects"><span class="label"><b>04</b> · projects</span><h2>Selected work</h2><div class="projects">'+
        m.projects.map(function(p,k){
          return '<article class="pc rv'+(p.todo?' todo':'')+'"><div class="pc-bar"><i></i><i></i><i></i><span>~/'+esc(m.id)+'/'+esc(p.file||p.name)+'</span></div>'+
-           '<div class="pc-art"><canvas data-seed="'+esc(m.id+p.name)+'"></canvas><span class="big">P-0'+(k+1)+'</span></div>'+
+           projArt(p,m,k)+
            '<div class="pc-body"><div class="pc-meta"><span>'+esc(p.meta||'')+'</span>'+(p.todo?'<span class="todo-tag">to be added</span>':(p.status?'<span class="status"><i></i>'+esc(p.status)+'</span>':''))+'</div>'+
            '<h3>'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p>'+
            (p.tags&&p.tags.length?'<ul class="tags">'+p.tags.map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ul>':'')+
