@@ -43,7 +43,7 @@ var TEAM = [
     ]
   },
   {
-    id:"mel", nick:"Mel", first:"Mel Fredrick", last:"Sablan", initials:"MS", color:"#ffb547", photo:"",
+    id:"mel", nick:"Mel", first:"Mel Fredrick", last:"Sablan", initials:"MS", color:"#ffb547", photo:"images/mel.png",
     roles:[
       "BSIT Student · TUP Manila",
       "Cloud & AI on AWS",
@@ -122,7 +122,7 @@ var TEAM = [
     ]
   },
   {
-    id:"althea", nick:"Althea", first:"Althea Marie", last:"Laurente", initials:"AL", color:"#ff6b81", photo:"",
+    id:"althea", nick:"Althea", first:"Althea Marie", last:"Laurente", initials:"AL", color:"#ff6b81", photo:"images/althea.png",
     roles:[
       "BSIT 4A · TUP Manila, Ermita",
       "Web systems for real communities",
