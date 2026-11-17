@@ -8,7 +8,7 @@
   function avatar(m,cls){return '<span class="av '+(cls||'')+'" style="--pc:'+m.color+'">'+(m.photo?'<img src="'+esc(m.photo)+'" alt="">':esc(m.initials))+'</span>'}
   function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){el.classList.remove('show')},1800)}
   function glyph(name){
-    var map={"C++":"C++","Python":"Py","Java":"Jv","React.js":"Re","React JS":"Re","React Native":"RN","Tailwind CSS":"Tw","GitHub":"Gh","Git & GitHub":"Git","Vercel":"▲","Supabase":"Sb","AWS":"AWS","Antigravity":"AG","Claude":"✺","AWS EC2":"EC2","AWS Amplify":"Amp","Amazon RDS":"RDS","Amazon Bedrock":"Bdr","Linux / Unix":"$_","CSS":"CSS","Flask":"Fl","SQL":"SQL","MySQL":"My","SQLite":"Lt","Power BI":"BI","Tableau":"Tb","R":"R","Excel":"Xl","SAP ERP":"SAP","Zendesk":"Zd","HTML":"&lt;/&gt;","JavaScript":"JS","HTML · CSS · JS":"&lt;/&gt;","QR generation":"QR","GCash / Maya":"₱","Machine learning":"ML","Laravel":"Lv","Android":"And","Figma":"Fg","Canva":"Cv","Kiro":"Ki","VS Code":"VS","Gemini":"✦","ChatGPT":"◎"};
+    var map={"C++":"C++","Python":"Py","Java":"Jv","React.js":"Re","React JS":"Re","React Native":"RN","Tailwind CSS":"Tw","GitHub":"Gh","Git & GitHub":"Git","Vercel":"▲","Supabase":"Sb","AWS":"AWS","Antigravity":"AG","Claude":"✺","AWS EC2":"EC2","AWS Amplify":"Amp","Amazon RDS":"RDS","Amazon Bedrock":"Bdr","Linux / Unix":"$_","CSS":"CSS","Flask":"Fl","SQL":"SQL","MySQL":"My","SQLite":"Lt","Power BI":"BI","Tableau":"Tb","R":"R","Excel":"Xl","SAP ERP":"SAP","Zendesk":"Zd","HTML":"&lt;/&gt;","JavaScript":"JS","HTML · CSS · JS":"&lt;/&gt;","QR generation":"QR","GCash / Maya":"₱","Machine learning":"ML","Laravel":"Lv","Android":"And","Figma":"Fg","Canva":"Cv","Kiro":"Ki","VS Code":"VS","Gemini":"✦","ChatGPT":"◎","Linux":"$_","MongoDB":"Mo","Cisco Packet Tracer":"CPT","Adobe Photoshop":"Ps","Adobe Illustrator":"Ai","SARIMA":"SA","XGBoost":"XGB","Random Forest":"RF","Automation":"⚙","Android Studio":"AS","Microsoft Azure AI":"Az","React":"Re","Node.js":"No","Google Cloud":"GCP","Azure":"Az","PostgreSQL":"Pg","TensorFlow":"TF","PyTorch":"PT","Nginx":"Nx","Docker":"Dk","Kubernetes":"K8s","Terraform":"Tf","Ansible":"An","Jenkins":"Jk","Redis":"Rd","Firebase":"Fb","Prometheus":"Pm","Grafana":"Gf","OpenAI":"AI","Cisco":"Cs","Go":"Go","Rust":"Rs","Vue":"Vu","Angular":"Ng","GraphQL":"GQ","Git":"Git"};
     return map[name]||esc(name.replace(/[^A-Za-z0-9+]/g,'').slice(0,2)||'•');
   }
   var ICONS={
@@ -148,10 +148,10 @@
     function frame(){
       S.raf=0;if(!S.L)return;
       var d=S.tgt-S.cur;S.cur+=d*.14;if(Math.abs(d)<.4)S.cur=S.tgt;
-      var len=lenAtY(clamp(S.cur,0,S.H)),pt=base.getPointAtLength(len),c=0;
+      var ys=S.ys,len=lenAtY(clamp(S.cur,ys[0],ys[ys.length-1])),pt=base.getPointAtLength(len),c=0;
       fill.style.strokeDashoffset=S.L-len;
       me.style.transform='translate3d('+pt.x+'px,'+pt.y+'px,0)';
-      for(var i=0;i<S.lens.length;i++)if(len>=S.lens[i]-1)c++;
+      for(var i=0;i<ys.length;i++)if(S.cur>=ys[i]-1)c++;
       mark(c);
       if(S.cur!==S.tgt)S.raf=requestAnimationFrame(frame);
     }
@@ -161,7 +161,7 @@
       var W=rr.width,H=rr.height;S.H=H;
       svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.setAttribute('width',W);svg.setAttribute('height',H);
       var pts=steps.map(function(s){var r=$('.rs-dot',s).getBoundingClientRect();return {x:r.left-rr.left+r.width/2,y:r.top-rr.top+r.height/2}});
-      var all=[{x:pts[0].x,y:Math.max(0,pts[0].y-70)}].concat(pts,[{x:pts[pts.length-1].x,y:Math.min(H,pts[pts.length-1].y+70)}]);
+      var all=pts;S.ys=pts.map(function(p){return p.y});
       var d='M'+all[0].x+' '+all[0].y;
       for(var i=1;i<all.length;i++){var a=all[i-1],b=all[i],my=(a.y+b.y)/2;d+=' C'+a.x+' '+my+' '+b.x+' '+my+' '+b.x+' '+b.y}
       base.setAttribute('d',d);fill.setAttribute('d',d);

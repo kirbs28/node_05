@@ -5,6 +5,8 @@
    ========================================================= */
 var JOURNEYS = {
   kirby: {
+    head: "A Light for Someone Else",
+    quote: "“Study hard, serve sincerely, live mindfully, and be a light for someone else.”",
     steps: [
       {tag:"Where It Starts", title:"Napindan, Taguig", text:"My mother is the strongest person I know. She works long hours, cares for our family, and rarely rests, but she still makes sure I never miss a day of school. Every time I feel like giving up, I think of her. Everything I’m working toward is my way of one day giving back what she gave up for me."},
       {tag:"A Door Opens", title:"Becoming a Tzu Chi Scholar", text:"When I got the news that I was accepted as a Tzu Chi scholar, I was both happy and afraid. I wasn’t sure I could carry the extra classes and responsibilities on top of school. I didn’t know then that this would be one of the greatest blessings of my life. Tzu Chi didn’t just help me stay in school. It helped me become someone I’m proud of."},
@@ -27,6 +29,8 @@ var JOURNEYS = {
     ]
   },
   mel: {
+    head: "Paused, Never Stopped",
+    quote: "“The pause slowed my degree down, but it never stopped my goals.”",
     steps: [
       {tag:"Starting My IT Journey", title:"2021 · BSIT, TUP Manila", text:"I started my BS Information Technology at the Technological University of the Philippines – Manila with one hope: to build a future in technology. I didn’t know yet which part of tech I belonged in. I just knew I wanted to find out, and that first step was enough."},
       {tag:"My First Job", title:"2023 · Customer Service at Alorica", text:"At Alorica, I took my first real step into working life. Each call was a customer with a billing or technical problem, and I learned to solve it carefully and accurately, and to read the data behind every complaint. Without realizing it, I was learning to listen to people and to the numbers at the same time."},
@@ -37,6 +41,8 @@ var JOURNEYS = {
     ]
   },
   althea: {
+    head: "Stitch by Stitch",
+    quote: "“Big things are finished one small step at a time.”",
     steps: [
       {tag:"The Beginning", title:"Born August 6, 2005 · Metro Manila", text:"I was born in Metro Manila to my parents, Emilia and Aquilino. I started school at Baclaran Elementary School Unit 2, and that’s where my curiosity first grew. I didn’t know it yet, but those small questions about how things work would one day shape my whole path."},
       {tag:"Discovering How Things Work", title:"Parañaque National High School – Baclaran", text:"In high school I became fascinated with electronics: what makes a circuit light up, how a machine actually works. That curiosity slowly turned into a love for coding and technology, and I began to imagine a future where I could build things myself."},
@@ -47,6 +53,8 @@ var JOURNEYS = {
     ]
   },
   carl: {
+    head: "Quietly Becoming",
+    quote: "“Still growing, still reflecting, one quiet step at a time.”",
     steps: [
       {tag:"Where I Come From", title:"A Close-Knit Family", text:"I grew up in a close-knit family that held strong values at home. Those values became my foundation: what I stand on, and what I come back to whenever life gets uncertain."},
       {tag:"Growing Through Challenges", title:"Learning Resilience", text:"Growing up wasn’t always easy. I faced many challenges, and each one asked more of me than I thought I had. But they taught me resilience: that falling down isn’t the end, as long as you choose to stand back up."},

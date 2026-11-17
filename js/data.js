@@ -16,10 +16,13 @@ var TEAM = [
     card:{Program:"BS Information Technology", Campus:"TUP Manila", Lead:"USG · GDG on Campus"},
     highlights:["University Student Government President","GDG on Campus TUP Manila · AI/ML Core Lead"],
     stack:[
-      {group:"Languages", items:["C++","Python","Java"]},
-      {group:"Frameworks & UI", items:["React.js","React Native","Tailwind CSS"]},
-      {group:"Platforms & Cloud", items:["GitHub","Vercel","Supabase","AWS"]},
-      {group:"AI tools", items:["Antigravity","Claude"]}
+      {group:"Languages", items:["C++","Python","Java","HTML"]},
+      {group:"Frameworks & UI", items:["React.js","React Native","Tailwind CSS","Android Studio"]},
+      {group:"Platforms & Cloud", items:["GitHub","Vercel","Supabase","AWS","Microsoft Azure AI"]},
+      {group:"Data & ML models", items:["SQL","MongoDB","SARIMA","XGBoost","Random Forest"]},
+      {group:"Systems & Networking", items:["Linux","Cisco Packet Tracer"]},
+      {group:"Design", items:["Figma","Adobe Photoshop","Adobe Illustrator"]},
+      {group:"AI & Automation", items:["Antigravity","Claude","Gemini","Automation"]}
     ],
     focus:[{t:"Cybersecurity"},{t:"Machine Learning"},{t:"Artificial Intelligence"},{t:"Networking"}],
     projects:[
@@ -104,7 +107,12 @@ var TEAM = [
       "Trust: security-first thinking and observability"
     ],
     stack:[
-      {group:"Tech stack", items:["Add Carl's stack"], todo:true}
+      {group:"Languages", items:["Python","Java","C++","Go","Rust"]},
+      {group:"Frameworks & UI", items:["Node.js","React","Vue","Angular","GraphQL"]},
+      {group:"Cloud & DevOps", items:["AWS","Google Cloud","Azure","Docker","Kubernetes","Terraform","Ansible","Jenkins"]},
+      {group:"Systems & Networking", items:["Linux","Nginx","Cisco","Git"]},
+      {group:"Data & Monitoring", items:["PostgreSQL","MongoDB","Redis","Firebase","Prometheus","Grafana"]},
+      {group:"AI & ML", items:["TensorFlow","PyTorch","OpenAI"]}
     ],
     focus:[
       {t:"AI & Automation"},{t:"Web Systems"},{t:"Network & Infrastructure"},{t:"Applications"}
@@ -116,9 +124,8 @@ var TEAM = [
       {name:"Applications project", file:"apps", meta:"Applications", status:"", desc:"Project details to be added.", tags:[], todo:true}
     ],
     contact:[
-      {type:"email", label:"Email", value:"repivstiih@gmail.com", href:"mailto:repivstiih@gmail.com"},
-      {type:"phone", label:"Phone", value:"(02) 8706 7966", href:"tel:+63287067966"},
-      {type:"facebook", label:"Facebook", value:"Justine Carl", href:"", todo:true}
+      {type:"email", label:"Email", value:"justin.fabian114@gmail.com", href:"mailto:justin.fabian114@gmail.com"},
+      {type:"linkedin", label:"LinkedIn", value:"linkedin.com/in/justine-fabian", href:"https://www.linkedin.com/in/justine-fabian"}
     ]
   },
   {
@@ -159,7 +166,8 @@ var TEAM = [
        tags:["Web development","QR generation","GCash / Maya","Form design"]}
     ],
     contact:[
-      {type:"email", label:"Email", value:"your.email@example.com", href:"", todo:true}
+      {type:"email", label:"Email", value:"thealaurente@gmail.com", href:"mailto:thealaurente@gmail.com"},
+      {type:"github", label:"GitHub", value:"github.com/HerrscherTuna", href:"https://github.com/HerrscherTuna"}
     ]
   },
   {
