@@ -22,7 +22,7 @@ var TEAM = [
       {group:"Data & ML models", items:["SQL","MongoDB","SARIMA","XGBoost","Random Forest"]},
       {group:"Systems & Networking", items:["Linux","Cisco Packet Tracer"]},
       {group:"Design", items:["Figma","Adobe Photoshop","Adobe Illustrator"]},
-      {group:"AI & Automation", items:["Antigravity","Claude","Gemini","Automation"]}
+      {group:"AI & Automation", items:["Antigravity","Claude","Gemini","n8n"]}
     ],
     focus:[{t:"Cybersecurity"},{t:"Machine Learning"},{t:"Artificial Intelligence"},{t:"Networking"}],
     projects:[
@@ -118,10 +118,12 @@ var TEAM = [
       {t:"AI & Automation"},{t:"Web Systems"},{t:"Network & Infrastructure"},{t:"Applications"}
     ],
     projects:[
-      {name:"AI & Automation project", file:"ai-automation", meta:"AI & Automation", status:"", desc:"Project details to be added.", tags:[], todo:true},
-      {name:"Web Systems project", file:"web-systems", meta:"Web Systems", status:"", desc:"Project details to be added.", tags:[], todo:true},
-      {name:"Network & Infra project", file:"net-infra", meta:"Network & Infra", status:"", desc:"Project details to be added.", tags:[], todo:true},
-      {name:"Applications project", file:"apps", meta:"Applications", status:"", desc:"Project details to be added.", tags:[], todo:true}
+      {name:"Automated Evidence Classifier", file:"evidence-classifier", meta:"AI & Automation", status:"", desc:"A microservice that analyzes logs and flags anomalies using transformer models and explainable outputs.", tags:["AI","Transformers","Anomaly detection"], art:"chat"},
+      {name:"Predictive Ops", file:"predictive-ops", meta:"AI & Automation", status:"", desc:"ML pipelines for capacity planning and fault prediction using time-series forecasting.", tags:["Machine learning","Forecasting"], art:"water"},
+      {name:"OrderFlow Platform", file:"orderflow", meta:"Web Systems", status:"", desc:"High-throughput e-commerce backend with event-driven architecture and strong observability.", tags:["Backend","Event-driven","Observability"], art:"web"},
+      {name:"Resilient WAN", file:"resilient-wan", meta:"Network & Infra", status:"", desc:"SD-WAN deployment with automated failover and per-site QoS policies.", tags:["SD-WAN","Failover","QoS"], art:"nodes"},
+      {name:"Secure Edge", file:"secure-edge", meta:"Network & Infra", status:"", desc:"Firewall automation and zero-trust enforcement at border routers.", tags:["Firewall","Zero-trust","Security"], art:"nodes"},
+      {name:"Inventory Scanner", file:"inventory-scanner", meta:"Applications", status:"", desc:"Mobile scanning app integrated with real-time stock reconciliation.", tags:["Mobile","Scanning","Inventory"], art:"phone"}
     ],
     contact:[
       {type:"email", label:"Email", value:"justin.fabian114@gmail.com", href:"mailto:justin.fabian114@gmail.com"},
